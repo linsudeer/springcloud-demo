@@ -1,0 +1,24 @@
+logging:
+  level:
+    org.springframework.security: INFO
+    root: info
+  path: /logs/
+  file: ${spring.application.name}.log
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka
+
+spring:
+  rabbitmq:
+    host: rabbitmq
